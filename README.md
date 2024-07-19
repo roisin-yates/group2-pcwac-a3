@@ -15,7 +15,8 @@ This is group 2's Accessibility redesign of the [SBS.com.au/ondemand/](https://w
 ## Prototype planning 
 
 - The areas of particular interest are shown below with the corresponding feedback
-- 
+  
+![SBS on Demand prototype areas of interest](public/images/prototype-areas-of-interest.png)
 
 
 ## About the app

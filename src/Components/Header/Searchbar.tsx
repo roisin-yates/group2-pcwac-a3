@@ -30,11 +30,6 @@ const SearchbarInput = styled.input`
       color: dark-grey;
     }
   }
-
-  &::placeholder {
-    color: white;
-    opacity: 0.8;
-  }
 `
 
 const IconContainer = styled.button`

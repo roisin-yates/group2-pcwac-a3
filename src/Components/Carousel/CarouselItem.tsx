@@ -152,7 +152,6 @@ const TransitionAnimation = styled.div<{ transition: boolean }>`
   @media screen and (max-width: 1600px) {
     height: 540px;
   }
-
   @media screen and (max-width: 1300px) {
     height: 500px;
   }

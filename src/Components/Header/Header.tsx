@@ -118,7 +118,7 @@ export const Header = () => {
         </h1>
         <nav>
           <NavLink href="/">Home</NavLink>
-          <NavLink href="/">TV Shows</NavLink>
+          <NavLink href="/tv-shows">TV Shows</NavLink>
           <NavLink href="/">Movies</NavLink>
           <NavLink href="/">Live</NavLink>
           <NavLink href="/">News</NavLink>

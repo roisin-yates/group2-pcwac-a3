@@ -111,9 +111,11 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <NavContainer>
-        <a href="/" aria-label="Visit SBS On Demand homepage">
-          <LogoImage src="/images/logo.png" alt="SBS On Demand" />
-        </a>
+        <h1>
+          <a href="/" aria-label="Visit SBS On Demand homepage">
+            <LogoImage src="/images/logo.png" alt="SBS On Demand" />
+          </a>
+        </h1>
         <nav>
           <NavLink href="/">Home</NavLink>
           <NavLink href="/">TV Shows</NavLink>

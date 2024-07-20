@@ -45,19 +45,19 @@ export const AutoComplete = () => {
       <SuggestionsHeader>Suggestions:</SuggestionsHeader>
       <SuggestionsUnorderedList>
         <SuggestionsList>
-          <SuggestionsLink href="/">Suggestion1</SuggestionsLink>
+          <SuggestionsLink href="/suggestion-1">Suggestion1</SuggestionsLink>
         </SuggestionsList>
         <SuggestionsList>
-          <SuggestionsLink href="/">Suggestion2</SuggestionsLink>
+          <SuggestionsLink href="/suggestion-2">Suggestion2</SuggestionsLink>
         </SuggestionsList>
         <SuggestionsList>
-          <SuggestionsLink href="/">Suggestion3</SuggestionsLink>
+          <SuggestionsLink href="/suggestion-3">Suggestion3</SuggestionsLink>
         </SuggestionsList>
         <SuggestionsList>
-          <SuggestionsLink href="/">Suggestion4</SuggestionsLink>
+          <SuggestionsLink href="/suggestion-4">Suggestion4</SuggestionsLink>
         </SuggestionsList>
         <SuggestionsList>
-          <SuggestionsLink href="/">Suggestion5</SuggestionsLink>
+          <SuggestionsLink href="/suggestion-5">Suggestion5</SuggestionsLink>
         </SuggestionsList>
       </SuggestionsUnorderedList>
     </AutoCompleteContainer>

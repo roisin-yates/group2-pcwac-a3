@@ -119,10 +119,10 @@ export const Header = () => {
         <nav>
           <NavLink href="/">Home</NavLink>
           <NavLink href="/tv-shows">TV Shows</NavLink>
-          <NavLink href="/">Movies</NavLink>
-          <NavLink href="/">Live</NavLink>
-          <NavLink href="/">News</NavLink>
-          <NavLink href="/">Sport</NavLink>
+          <NavLink href="/movies">Movies</NavLink>
+          <NavLink href="/live">Live</NavLink>
+          <NavLink href="/news">News</NavLink>
+          <NavLink href="/sport">Sport</NavLink>
         </nav>
       </NavContainer>
       <NavContainer>

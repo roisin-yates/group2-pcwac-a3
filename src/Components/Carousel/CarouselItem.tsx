@@ -169,7 +169,7 @@ export const CarouselItem = (props: CarouselItemProps) => {
   return (
     <Background aria-live="polite" aria-atomic>
       <TransitionAnimation transition={props.transition} />
-      <a href="/" aria-label={`Watch ${props.title}`}>
+      <a href={`/${props.title}`} aria-label={`Watch ${props.title}`}>
         <Image src={props.url} alt={props.title} />
       </a>
       <TextContainer>
@@ -177,13 +177,19 @@ export const CarouselItem = (props: CarouselItemProps) => {
         <Title>{props.title}</Title>
         <Description>{props.description}</Description>
         <ButtonContainer>
-          <PlayButton href="/" aria-label={`Play ${props.title}`}>
+          <PlayButton
+            href={`/${props.title}`}
+            aria-label={`Play ${props.title}`}
+          >
             <span className="material-symbols-outlined" aria-hidden>
               play_arrow
             </span>
             <span>Play</span>
           </PlayButton>
-          <MoreInfo href="/" aria-label={`More info about ${props.title}`}>
+          <MoreInfo
+            href={`/${props.title}-more-info`}
+            aria-label={`More info about ${props.title}`}
+          >
             More info
           </MoreInfo>
           <HeartButton title="Add to favourites" aria-label="Add to favourites">

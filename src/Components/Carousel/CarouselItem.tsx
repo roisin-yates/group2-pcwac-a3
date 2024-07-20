@@ -13,6 +13,7 @@ const Image = styled.img`
   object-fit: cover;
   height: auto;
   display: block;
+  background-color: black;
 `
 
 const TextContainer = styled.div`
@@ -134,16 +135,37 @@ const HeartButton = styled.div`
   transition: background-color 0.2s, color 0.2s;
 `
 
-interface CarouselImageProps {
+const TransitionAnimation = styled.div<{ transition: boolean }>`
+  position: absolute;
+
+  width: 100%;
+  height: 680px;
+  background-color: black;
+  transition: opacity ease-in-out 0.5s;
+  opacity: ${(props) => (props.transition ? 1 : 0)};
+  pointer-events: none;
+  z-index: 1;
+
+  @media screen and (max-width: 1700px) {
+    height: 600px;
+  }
+  @media screen and (max-width: 1600px) {
+    height: 500px;
+  }
+`
+
+interface CarouselItemProps {
   url: string
   title: string
   description: string
   subtitle: string
+  transition: boolean
 }
 
-export const CarouselImage = (props: CarouselImageProps) => {
+export const CarouselItem = (props: CarouselItemProps) => {
   return (
-    <Background>
+    <Background aria-live="polite" aria-atomic>
+      <TransitionAnimation transition={props.transition} />
       <a href="/" aria-label={`Watch ${props.title}`}>
         <Image src={props.url} alt={props.title} />
       </a>

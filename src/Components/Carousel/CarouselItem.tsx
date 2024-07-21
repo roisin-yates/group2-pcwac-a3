@@ -115,12 +115,11 @@ const ButtonContainer = styled.div`
   display: flex;
 `
 
-const HeartButton = styled.div`
+const HeartButton = styled.button`
   text-decoration: none;
   margin: 0px 4px;
   background-color: transparent;
   color: white;
-  height: 35px;
   border: 2px solid white;
   border-radius: 30px;
   padding: 6px 12px;
@@ -133,6 +132,13 @@ const HeartButton = styled.div`
 
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: white;
+    color: grey;
+  }
 `
 
 const TransitionAnimation = styled.div<{ transition: boolean }>`

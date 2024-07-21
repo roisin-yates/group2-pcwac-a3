@@ -22,7 +22,9 @@ const PreviousButton = styled.button`
 
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     opacity: 1;
   }
 `
@@ -44,7 +46,9 @@ const NextButton = styled.button`
 
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     opacity: 1;
   }
 `
@@ -98,7 +102,9 @@ const PauseButton = styled.button`
   height: 40px;
   width: 40px;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     opacity: 1;
   }
 

@@ -5,6 +5,7 @@ import { Carousel } from './Components/Carousel/Carousel'
 import { ContentContainer } from './Components/MainContents/ContentContainer'
 
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
+import { PromotedContent } from './Components/PromotedContent/PromotedContent'
 
 const Layout = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
     <>
       <Carousel />
       <ContentContainer />
+      <PromotedContent />
     </>
   )
 }

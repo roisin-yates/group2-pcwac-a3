@@ -94,23 +94,23 @@ const PlayIcon = styled.div`
 `
 
 const ContentCardContainer = styled.div`
-  width: 300px;
-  max-height: 300px;
+  max-width: 300px;
+  height: 300px;
   min-width: 200px;
 
-  transition: height 0.5s, width 0.5s;
+  transition: height 0.5s, max-width 0.5s;
 
   margin: 0px 4px;
 
   @media screen and (max-width: 1700) {
-    min-width: 250px;
+    width: 250px;
   }
 
   &:hover,
   &:focus-within,
   &:active {
     @media screen and (min-width: 1300px) {
-      width: 350px;
+      max-width: 350px;
     }
 
     ${FavouritesButton} {

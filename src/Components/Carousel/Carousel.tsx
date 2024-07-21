@@ -79,7 +79,7 @@ const ActiveButtonContainer = styled.div`
   @media screen and (max-width: 1600px) {
     top: 50%;
   }
-  @media screen and (max-width: 1500px) {
+  @media screen and (max-width: 1600px) {
     top: 500px;
   }
 `

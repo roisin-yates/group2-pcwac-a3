@@ -6,6 +6,7 @@ import { ContentContainer } from './Components/MainContents/ContentContainer'
 
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 import { PromotedContent } from './Components/PromotedContent/PromotedContent'
+import { Footer } from './Components/Footer/Footer'
 
 const Layout = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <Carousel />
       <ContentContainer />
       <PromotedContent />
+      <Footer />
     </>
   )
 }

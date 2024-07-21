@@ -84,14 +84,25 @@ export const Searchbar = () => {
               onKeyUp={(e) => e.key === 'Enter' && handleSubmit(e)}
               size="small"
               aria-label="Search"
+              label="Search"
+              InputLabelProps={{
+                shrink: false,
+              }}
               placeholder="Search 15,000+ hours of videos"
               sx={{
+                '& label': {
+                  color: 'white',
+                  display: value ? 'none' : 'block',
+                },
                 '& input': {
                   color: 'white',
-                  '&:focus, &:hover, &:active': {
+                  '&:focus, &:active': {
                     color: 'black',
                     backgroundColor: 'white',
                     border: 0,
+                    '& label': {
+                      visibility: 'hidden',
+                    },
                     '&::placeholder': {
                       color: 'black',
                     },

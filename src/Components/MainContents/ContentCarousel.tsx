@@ -38,7 +38,6 @@ const ContentRibbon = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  overflow: hidden;
   padding: 12px 12px;
 
   @media screen and (max-width: 1100px) {
@@ -105,11 +104,11 @@ const LeftButton = styled.button`
     top: 75%;
   }
   @media screen and (max-width: 1600px) {
-    top: 70%;
+    top: 80%;
   }
 
-  @media screen and (max-width: 1450px) {
-    top: 65%;
+  @media screen and (max-width: 1500px) {
+    top: 90%;
   }
 
   @media screen and (max-width: 1100px) {
@@ -145,11 +144,11 @@ const RightButton = styled.button`
     top: 75%;
   }
   @media screen and (max-width: 1600px) {
-    top: 70%;
+    top: 80%;
   }
 
-  @media screen and (max-width: 1450px) {
-    top: 65%;
+  @media screen and (max-width: 1500px) {
+    top: 90%;
   }
 
   @media screen and (max-width: 1100px) {

@@ -39,7 +39,7 @@ export const PromotedContent = () => {
       </PromotedHeader>
       <StyledLink href="/promoted-content">
         <ImageContainer aria-labelledby="promoted-content-label">
-          <Image src="/images/default.jpg" alt="" />
+          <Image src="/images/default.jpg" alt="Promoted content default" />
         </ImageContainer>
       </StyledLink>
     </StyledContainer>

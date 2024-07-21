@@ -1,6 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { AutoComplete } from './AutoComplete'
+
+import { Autocomplete, TextField } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 const SearchbarContainer = styled.div`
   margin: 0px 4px;
@@ -10,24 +12,9 @@ const SearchbarContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-`
-
-const SearchbarInput = styled.input`
-  padding: 8px 16px;
-  border: none;
-  background-color: transparent;
-  font-size: 16px;
-
-  &:focus,
-  &:hover,
-  &:active {
-    outline: none;
-    background-color: white;
-    border: 1px solid white;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+  & input {
     &::placeholder {
-      color: dark-grey;
+      color: white;
     }
   }
 `
@@ -47,53 +34,91 @@ const IconContainer = styled.button`
 `
 
 export const Searchbar = () => {
-  const [expanded, setExpanded] = React.useState(false)
   const [value, setValue] = React.useState('')
 
-  const toggleRef = React.useRef<HTMLDivElement>(null)
+  const navigate = useNavigate()
 
-  React.useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (toggleRef.current && !toggleRef.current.contains(event.target)) {
-        setExpanded(false)
-      }
-    }
+  const options = [
+    {
+      label: 'Suggestion1',
+      id: 'Suggestion1',
+    },
+    {
+      label: 'Suggestion2',
+      id: 'Suggestion2',
+    },
+    {
+      label: 'Suggestion3',
+      id: 'Suggestion3',
+    },
+    {
+      label: 'Suggestion4',
+      id: 'Suggestion4',
+    },
+    {
+      label: 'Suggestion5',
+      id: 'Suggestion5',
+    },
+  ]
 
-    document.addEventListener('mousedown', handleClickOutside)
-    document.addEventListener('focusin', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-      document.addEventListener('focusin', handleClickOutside)
-    }
-  }, [])
+  const handleSubmit = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    navigate('/search')
+  }
 
   return (
-    <div ref={toggleRef}>
-      <SearchbarContainer>
-        <SearchbarInput
-          onClick={() => setExpanded(true)}
-          onFocus={() => setExpanded(true)}
-          aria-expanded={expanded}
-          aria-controls="autocompleter"
-          onChange={(event) => setValue(event.target.value)}
-          type="text"
-          placeholder="Search 15,000+ hours of videos"
-          aria-autocomplete="list"
-          autoCapitalize="false"
-          spellCheck="false"
-          aria-label="Search query"
-          value={value}
-        />
-        <IconContainer disabled={!value} aria-label="Search">
-          {/* This is unrelated to the WCAG 2.2 results, but the for purposes of this prototype I have used
+    <form method="get" action="/search">
+      <Autocomplete
+        disablePortal
+        disableClearable
+        autoComplete={false}
+        sx={{
+          width: 300,
+        }}
+        freeSolo
+        renderInput={(params) => (
+          <SearchbarContainer>
+            <TextField
+              {...params}
+              onChange={(e) => setValue(e.target.value)}
+              onKeyUp={(e) => e.key === 'Enter' && handleSubmit(e)}
+              size="small"
+              aria-label="Search"
+              placeholder="Search 15,000+ hours of videos"
+              sx={{
+                '& input': {
+                  color: 'white',
+                  '&:focus, &:hover, &:active': {
+                    color: 'black',
+                    backgroundColor: 'white',
+                    border: 0,
+                    '&::placeholder': {
+                      color: 'black',
+                    },
+                  },
+                },
+              }}
+            />
+            <IconContainer
+              disabled={!value}
+              type="submit"
+              tabIndex={-1}
+              aria-label="Submit"
+            >
+              {/* This is unrelated to the WCAG 2.2 results, but the for purposes of this prototype I have used
         FontIcons, which require aria-hidden or assistive technologies will read out their text content
         */}
-          <span className="material-symbols-outlined" aria-hidden>
-            search
-          </span>
-        </IconContainer>
-      </SearchbarContainer>
-      {expanded && <AutoComplete />}
-    </div>
+              <span className="material-symbols-outlined" aria-hidden>
+                search
+              </span>
+            </IconContainer>
+          </SearchbarContainer>
+        )}
+        id="search-combobox"
+        options={options}
+      />
+
+      {/* {expanded && <AutoComplete />} */}
+    </form>
   )
 }

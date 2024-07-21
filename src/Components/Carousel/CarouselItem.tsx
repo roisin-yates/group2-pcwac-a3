@@ -170,7 +170,7 @@ export const CarouselItem = (props: CarouselItemProps) => {
     <Background aria-live="polite" aria-atomic>
       <TransitionAnimation transition={props.transition} />
       <a href={`/${props.title}`} aria-label={`Watch ${props.title}`}>
-        <Image src={props.url} alt={props.title} />
+        <Image src={props.url} alt="" />
       </a>
       <TextContainer>
         <Subtitle>{props.subtitle}</Subtitle>

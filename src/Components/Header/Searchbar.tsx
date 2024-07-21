@@ -12,11 +12,6 @@ const SearchbarContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  & input {
-    &::placeholder {
-      color: white;
-    }
-  }
 `
 
 const IconContainer = styled.button`
@@ -71,6 +66,10 @@ export const Searchbar = () => {
       <Autocomplete
         disablePortal
         disableClearable
+        autoSelect
+        onChange={(e, v) => {
+          setValue(v.toString())
+        }}
         autoComplete={false}
         sx={{
           width: 300,
@@ -92,7 +91,7 @@ export const Searchbar = () => {
               sx={{
                 '& label': {
                   color: 'white',
-                  display: value ? 'none' : 'block',
+                  visibility: value ? 'hidden' : 'visible',
                 },
                 '& input': {
                   color: 'white',

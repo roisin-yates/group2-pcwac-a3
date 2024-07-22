@@ -64,14 +64,20 @@ const ActiveButton = styled.button<{ active: boolean }>`
 
   &:hover {
     background-color: white;
-  }
+  }s
 `
 
-const ActiveButtonContainer = styled.div`
+const ActiveButtonContainer = styled.ul`
   z-index: 2;
   position: absolute;
   top: 65%;
   left: 9%;
+  display: flex;
+  padding: 0;
+
+  & li {
+    list-style-type: none;
+  }
 
   @media screen and (max-width: 1700px) {
     top: 55%;
@@ -277,12 +283,15 @@ export const Carousel = () => {
       <ActiveButtonContainer>
         {CarouselItems.map((item, i) => {
           return (
-            <ActiveButton
-              aria-hidden
-              active={activeItem >= i}
-              onClick={() => setActiveItemWithTimeout(i)}
-              tabIndex={-1}
-            />
+            <li>
+              <ActiveButton
+                aria-label={`Select Carousel content ${i + 1} of ${
+                  CarouselItems.length
+                }`}
+                active={activeItem >= i}
+                onClick={() => setActiveItemWithTimeout(i)}
+              />
+            </li>
           )
         })}
       </ActiveButtonContainer>

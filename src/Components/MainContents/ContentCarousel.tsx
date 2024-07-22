@@ -239,7 +239,6 @@ export const ContentCarousel = () => {
         <LeftButton
           disabled={activeSet === 0}
           hidden={activeSet === 0}
-          aria-hidden={activeSet === 0}
           onClick={() => {
             setActiveSet(0)
           }}
@@ -272,7 +271,6 @@ export const ContentCarousel = () => {
             setActiveSet(1)
           }}
           hidden={activeSet === 1}
-          aria-hidden={activeSet === 1}
         >
           <span className="material-symbols-outlined" aria-hidden>
             arrow_forward_ios

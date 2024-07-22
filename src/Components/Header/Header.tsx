@@ -34,7 +34,10 @@ const NavLink = styled.a`
   }
 `
 
-const SignInButton = styled.button`
+const SignInButton = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0px 4px;
   color: black;
   background-color: #fdb717;
@@ -54,16 +57,22 @@ const SignInButton = styled.button`
   &:hover {
     background-color: #ffd666;
   }
+
+  padding: 3px 12px;
+  text-decoration: none;
 `
 
-const CreateAccountButton = styled.button`
+const CreateAccountButton = styled.a`
+  display: flex;
+  align-items: center;
   margin: 0px 4px;
   background-color: transparent;
   color: white;
   height: 35px;
   border: 1px solid white;
   border-radius: 20px;
-  padding: 6px 12px;
+  padding: 3px 12px;
+  text-decoration: none;
 
   font-size: 0.875rem;
   font-weight: 700;
@@ -127,10 +136,8 @@ export const Header = () => {
       </NavContainer>
       <NavContainer>
         <Searchbar />
-        <SignInButton aria-haspopup="dialog" aria-controls="login-modal">
-          Sign In
-        </SignInButton>
-        <CreateAccountButton aria-haspopup="dialog" aria-controls="login-modal">
+        <SignInButton href="/sign-in">Sign In</SignInButton>
+        <CreateAccountButton href="/create-account">
           Create Account
         </CreateAccountButton>
         <SettingsButton aria-label="Open Settings Menu">

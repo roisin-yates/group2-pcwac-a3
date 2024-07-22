@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const StyledFooter = styled.footer`
   height: 400px;
   width: full;
-  background-color: #232323;
+  background-color: #1b2024;
   padding: 40px 24px 32px 24px;
   display: flex;
   flex-direction: column;
@@ -117,8 +117,7 @@ const OtherLinks = styled.div`
 `
 
 const Acknowledgements = styled.div`
-  color: grey;
-  opacity: 0.7;
+  color: #9ba4ac;
   font-size: 0.9rem;
   margin-top: 32px;
 `

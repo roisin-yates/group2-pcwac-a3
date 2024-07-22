@@ -254,7 +254,7 @@ export const Carousel = () => {
         url={CarouselItems[activeItem].url}
         transition={transition}
       />
-      <PreviousButton aria-label="Previus" onClick={() => setPreviousItem()}>
+      <PreviousButton aria-label="Previous" onClick={() => setPreviousItem()}>
         <span className="material-symbols-outlined" aria-hidden>
           arrow_back_ios
         </span>

@@ -242,6 +242,7 @@ export const ContentCarousel = () => {
           onClick={() => {
             setActiveSet(0)
           }}
+          aria-label="Previous"
         >
           <span className="material-symbols-outlined" aria-hidden>
             arrow_back_ios
@@ -271,6 +272,7 @@ export const ContentCarousel = () => {
             setActiveSet(1)
           }}
           hidden={activeSet === 1}
+          aria-label="Next"
         >
           <span className="material-symbols-outlined" aria-hidden>
             arrow_forward_ios

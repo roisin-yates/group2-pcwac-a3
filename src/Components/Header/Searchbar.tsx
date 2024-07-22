@@ -87,7 +87,6 @@ export const Searchbar = () => {
               InputLabelProps={{
                 shrink: false,
               }}
-              placeholder="Search 15,000+ hours of videos"
               sx={{
                 '& label': {
                   color: 'white',

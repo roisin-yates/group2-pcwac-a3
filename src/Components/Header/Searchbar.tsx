@@ -83,6 +83,7 @@ export const Searchbar = () => {
               onKeyUp={(e) => e.key === 'Enter' && handleSubmit(e)}
               size="small"
               label="Search Content"
+              aria-label="Search Content"
               InputLabelProps={{
                 shrink: false,
               }}

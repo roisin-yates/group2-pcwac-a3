@@ -153,7 +153,10 @@ interface ContentCardProps {
 export const ContentCard = (props: ContentCardProps) => {
   return (
     <ContentCardContainer>
-      <ContainerLink href="/test" aria-label={`Watch ${props.title}`}>
+      <ContainerLink
+        href={`/${props.title}`}
+        aria-label={`Watch ${props.title}`}
+      >
         <Image src="images/default-card.jpg" alt="default card" />
         <ContentTitle>{props.title}</ContentTitle>
         <ContentGenre>{props.genre}</ContentGenre>

@@ -13,11 +13,6 @@ const StyledContainer = styled.div`
   align-items: center;
 `
 
-const PromotedHeader = styled.h3`
-  visibility: hidden;
-  margin-top: 0px;
-`
-
 const StyledLink = styled.a`
   cursor: pointer;
 `
@@ -34,12 +29,12 @@ const Image = styled.img`
 export const PromotedContent = () => {
   return (
     <StyledContainer>
-      <PromotedHeader id="promoted-content-label">
-        Promoted Content
-      </PromotedHeader>
-      <StyledLink href="/promoted-content">
+      <StyledLink
+        href="/promoted-content"
+        aria-label="Default Promoted Content"
+      >
         <ImageContainer aria-labelledby="promoted-content-label">
-          <Image src="/images/default.jpg" alt="Promoted content default" />
+          <Image src="/images/default.jpg" alt="Default promoted content" />
         </ImageContainer>
       </StyledLink>
     </StyledContainer>

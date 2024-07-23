@@ -235,7 +235,7 @@ export const ContentCarousel = () => {
           arrow_forward_ios
         </span>
       </ContentLink>
-      <ContentRibbon>
+      <ContentRibbon aria-live="polite" aria-atomic>
         <LeftButton
           disabled={activeSet === 0}
           hidden={activeSet === 0}

@@ -254,20 +254,24 @@ export const Carousel = () => {
         url={CarouselItems[activeItem].url}
         transition={transition}
       />
-      <PreviousButton aria-label="Previous" onClick={() => setPreviousItem()}>
+      <PreviousButton
+        aria-label="Previous Carousel Content"
+        onClick={() => setPreviousItem()}
+      >
         <span className="material-symbols-outlined" aria-hidden>
           arrow_back_ios
         </span>
       </PreviousButton>
-      <NextButton aria-label="Next" onClick={() => setNextItem()}>
+      <NextButton
+        aria-label="Next Carousel Content"
+        onClick={() => setNextItem()}
+      >
         <span className="material-symbols-outlined" aria-hidden>
           arrow_forward_ios
         </span>
       </NextButton>
       <PauseButton
-        aria-label={`${
-          shouldAutoUpdate ? 'Pause' : 'Play'
-        } Suggestions Carousel`}
+        aria-label={`${shouldAutoUpdate ? 'Pause' : 'Play'} Carousel Content`}
         onClick={() => setShouldAutoUpdate(!shouldAutoUpdate)}
       >
         {shouldAutoUpdate ? (

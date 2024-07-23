@@ -82,8 +82,7 @@ export const Searchbar = () => {
               onChange={(e) => setValue(e.target.value)}
               onKeyUp={(e) => e.key === 'Enter' && handleSubmit(e)}
               size="small"
-              aria-label="Search"
-              label="Search"
+              label="Search Content"
               InputLabelProps={{
                 shrink: false,
               }}
@@ -108,12 +107,7 @@ export const Searchbar = () => {
                 },
               }}
             />
-            <IconContainer
-              disabled={!value}
-              type="submit"
-              tabIndex={-1}
-              aria-label="Submit"
-            >
+            <IconContainer disabled={!value} type="submit" aria-label="Submit">
               {/* This is unrelated to the WCAG 2.2 results, but the for purposes of this prototype I have used
         FontIcons, which require aria-hidden or assistive technologies will read out their text content
         */}

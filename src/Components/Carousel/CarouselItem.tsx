@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 const Background = styled.div`
   max-width: 100%;
-
   min-width: 1400px;
   height: auto;
   overflow: hidden;
+  background-color: black;
 `
 
 const Image = styled.img`
@@ -13,7 +13,6 @@ const Image = styled.img`
   object-fit: cover;
   height: auto;
   display: block;
-  background-color: black;
 `
 
 const TextContainer = styled.div`
@@ -194,11 +193,11 @@ export const CarouselItem = (props: CarouselItemProps) => {
           </PlayButton>
           <MoreInfo
             href={`/${props.title}-more-info`}
-            aria-label={`More info about ${props.title}`}
+            aria-label={`See more info about ${props.title}`}
           >
             More info
           </MoreInfo>
-          <HeartButton title="Add to favourites" aria-label="Add to favourites">
+          <HeartButton aria-label={`Add ${props.title} to favourites`}>
             <span className="material-symbols-outlined" aria-hidden>
               favorite
             </span>

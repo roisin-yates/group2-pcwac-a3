@@ -1,7 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { Searchbar } from './Searchbar'
-import { MobileHeader } from './MobileHeader'
 
 const HeaderContainer = styled.header`
   height: 60px;
@@ -119,12 +118,7 @@ const DesktopHeader = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-
-  @media screen and (max-width: 1270px) {
-    display: none;
-  }
 `
-
 export const Header = () => {
   return (
     <HeaderContainer>
@@ -160,7 +154,6 @@ export const Header = () => {
           </SettingsButton>
         </NavContainer>
       </DesktopHeader>
-      <MobileHeader />
     </HeaderContainer>
   )
 }

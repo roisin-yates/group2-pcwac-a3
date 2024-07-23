@@ -1,14 +1,11 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { Searchbar } from './Searchbar'
+import { MobileHeader } from './MobileHeader'
 
 const HeaderContainer = styled.header`
   height: 60px;
   background-color: black;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   padding: 0px 24px;
 `
 
@@ -116,39 +113,54 @@ const SettingsButton = styled.button`
   }
 `
 
+const DesktopHeader = styled.div`
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1270px) {
+    display: none;
+  }
+`
+
 export const Header = () => {
   return (
     <HeaderContainer>
-      <NavContainer>
-        <h1>
-          <a href="/" aria-label="Visit SBS On Demand homepage">
-            <LogoImage src="/images/logo.png" alt="SBS On Demand" />
-          </a>
-        </h1>
-        <nav>
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/tv-shows">TV Shows</NavLink>
-          <NavLink href="/movies">Movies</NavLink>
-          <NavLink href="/live">Live</NavLink>
-          <NavLink href="/news">News</NavLink>
-          <NavLink href="/sport">Sport</NavLink>
-        </nav>
-      </NavContainer>
-      <NavContainer>
-        <Searchbar />
-        <SignInButton href="/sign-in">Sign In</SignInButton>
-        <CreateAccountButton href="/create-account">
-          Create Account
-        </CreateAccountButton>
-        <SettingsButton aria-label="Open Settings Menu">
-          {/* This is unrelated to the WCAG 2.2 results, but the for purposes of this prototype I have used
+      <DesktopHeader>
+        <NavContainer>
+          <h1>
+            <a href="/" aria-label="Visit SBS On Demand homepage">
+              <LogoImage src="/images/logo.png" alt="SBS On Demand" />
+            </a>
+          </h1>
+          <nav>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/tv-shows">TV Shows</NavLink>
+            <NavLink href="/movies">Movies</NavLink>
+            <NavLink href="/live">Live</NavLink>
+            <NavLink href="/news">News</NavLink>
+            <NavLink href="/sport">Sport</NavLink>
+          </nav>
+        </NavContainer>
+        <NavContainer>
+          <Searchbar />
+          <SignInButton href="/sign-in">Sign In</SignInButton>
+          <CreateAccountButton href="/create-account">
+            Create Account
+          </CreateAccountButton>
+          <SettingsButton aria-label="Open Settings Menu">
+            {/* This is unrelated to the WCAG 2.2 results, but the for purposes of this prototype I have used
         FontIcons, which require aria-hidden or assistive technologies will read out their text content
         */}
-          <span className="material-symbols-outlined" aria-hidden>
-            arrow_drop_down
-          </span>
-        </SettingsButton>
-      </NavContainer>
+            <span className="material-symbols-outlined" aria-hidden>
+              arrow_drop_down
+            </span>
+          </SettingsButton>
+        </NavContainer>
+      </DesktopHeader>
+      <MobileHeader />
     </HeaderContainer>
   )
 }

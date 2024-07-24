@@ -42,8 +42,6 @@ const IconContainer = styled.button`
   }
 `
 
-const Form = styled.form``
-
 export const Searchbar = () => {
   const [value, setValue] = React.useState('')
 

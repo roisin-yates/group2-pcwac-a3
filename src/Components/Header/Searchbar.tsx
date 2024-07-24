@@ -80,6 +80,7 @@ export const Searchbar = () => {
       <Autocomplete
         disablePortal
         aria-label="Search Content"
+        aria-controls="search-combobox-listbox"
         disableClearable
         autoSelect
         onChange={(e, v) => {

@@ -12,6 +12,20 @@ const SearchbarContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  & label {
+    background-color: black;
+  }
+
+  & input {
+    z-index: 2
+  }
+
+  &:focus-within {
+    & label {
+      color: white
+    }
+  }
 `
 
 const IconContainer = styled.button`
@@ -27,6 +41,8 @@ const IconContainer = styled.button`
     opacity: 0.7;
   }
 `
+
+const Form = styled.form``
 
 export const Searchbar = () => {
   const [value, setValue] = React.useState('')
@@ -65,6 +81,7 @@ export const Searchbar = () => {
     <form method="get" action="/search">
       <Autocomplete
         disablePortal
+        aria-label="Search Content"
         disableClearable
         autoSelect
         onChange={(e, v) => {
@@ -82,24 +99,21 @@ export const Searchbar = () => {
               onChange={(e) => setValue(e.target.value)}
               onKeyUp={(e) => e.key === 'Enter' && handleSubmit(e)}
               size="small"
-              label="Search Content"
-              aria-label="Search Content"
-              InputLabelProps={{
-                shrink: false,
-              }}
+              label="Search"
+              placeholder="Search 15,000+ hours of videos"
               sx={{
                 '& label': {
                   color: 'white',
-                  visibility: value ? 'hidden' : 'visible',
                 },
                 '& input': {
                   color: 'white',
                   '&:focus, &:active': {
                     color: 'black',
                     backgroundColor: 'white',
-                    border: 0,
                     '& label': {
                       visibility: 'hidden',
+                      color: 'white',
+                      backgroundColor: 'black',
                     },
                     '&::placeholder': {
                       color: 'black',
